@@ -28,7 +28,7 @@ export const Button = ({
     return (
             <Link to={link as string}>
                 {/* {icon && icons[icon]} */}
-                <button className={classNameBtn ? classNameBtn : 'header__button'}>{value && value}</button>
+                <button className={classNameBtn ? classNameBtn : 'header__button'} onClick={onClick}>{value && value}</button>
             </Link>
             )
     }

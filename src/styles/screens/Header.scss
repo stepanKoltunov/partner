@@ -1,5 +1,10 @@
 @import '../pallete.scss';
 
+@mixin getHoverEffect() {
+    background-color: $mainLightBlue;
+    color: $mainGreyText;
+}
+
 .header {
     width: 100wh;
     background-color: $mainBlue;
@@ -9,6 +14,7 @@
     padding: 1rem;
     box-shadow: $mainWhiteText 0px 5px 5px 2px;
     font-family: 'Roboto', sans-serif;
+    align-items: center;
 
     &__logo {
         width: 45px;
@@ -20,8 +26,7 @@
         cursor: pointer;
 
         &:hover {
-            background-color: $mainLightBlue;
-            color: $mainGreyText;
+            @include getHoverEffect();
             transform: scale(120%)
         }
     }
@@ -31,6 +36,7 @@
         transition: all 0.5s;
         display: flex;
         align-items: center;
+        justify-content: space-between;
         gap: 1rem;
     }
 
@@ -53,8 +59,7 @@
     }
 
     &__button:hover {
-        background-color: $mainLightBlue;
-        color: $mainGreyText;
+        @include getHoverEffect();
     }    
 
     &__icon {
@@ -63,8 +68,70 @@
         color: $mainWhiteText;
 
         &:hover {
-            background-color: $mainLightBlue;
-            color: $mainGreyText;
+            @include getHoverEffect();
         }
     }
 }
+
+@media (max-width: 1020px) {
+    .header {
+      gap: 3px;
+      padding: 20px 3px;
+    }
+
+    .header__logo-title {
+        font-size: 18px;
+    }
+
+    .header__buttons {
+        gap: 0px;
+        position: fixed;
+        height: 100vh;
+        flex-direction: column;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $mainBlue;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+        display: none;
+    }
+
+    .header__button {
+        max-width: fit-content;
+        font-size: 30px;
+        margin-bottom: 30px;
+        padding: 20px 40px;
+    }
+
+    .header__logo {
+        width: 37px;
+        height: 37px;
+    }
+
+    .header__button-close{
+        color: $mainWhiteText;
+        width: 37px;
+        height: 37px;
+        padding: 2px;
+        position: fixed;
+        top: 25px;
+        right: 5px;
+    }
+
+    
+    .header__button-menu {
+        color: $mainWhiteText;
+        width: 37px;
+        height: 37px;
+        padding: 2px;
+    }
+  }
+  
+  @media (min-width: 1020px) {
+    .header__button-menu {
+        display: none
+    }
+  }

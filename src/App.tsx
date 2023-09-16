@@ -8,12 +8,14 @@ function App() {
   return (
     <>
       <Header/>
-      <Routes>
-        <Route path='/' element={<h1>main</h1>}/>
-        <Route path='/about' element={<h1>about</h1>}/>
-        <Route path='/connection' element={<h1>connection</h1>}/>
-        <Route path='/services' element={<h1>services</h1>}/>
-      </Routes>
+      <div className={'container'}>
+        <Routes>
+          <Route path='/' element={<h1>main</h1>}/>
+          <Route path='/about' element={<h1>about</h1>}/>
+          <Route path='/connection' element={<h1>connection</h1>}/>
+          <Route path='/services' element={<h1>services</h1>}/>
+        </Routes>
+      </div>
     </>
   );
 }
